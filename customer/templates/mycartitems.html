@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block body_block%}
+{%for mobie in items%}
+<div class="row">
+    <div class="col-3">
+        <div class="card" style="width: 15rem;">
+            <img src="{{mobile.item.image.url}}" class="card-img-top w-100 h-25" alt="...">
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{mobile.item}}</li>
+                <li class="list-group-item">{{mobile.item.price}}</li>
+                <li class="list-group-item">{{mobile.status}}</li>
+                <li><a href="{%url 'removeitem' mobile.id%}"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}
+
+</html>

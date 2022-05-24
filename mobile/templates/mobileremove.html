@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{%extends 'm_base.html'%}
+
+{%block body_block%}
+<form action="" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    are you sure you want to delete {{object}}
+    <button type="submit">Remove</button>
+</form>
+{%endblock%}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block body_block%}
+{%for order in orders%}
+<div class="row">
+    <div class="col-12">
+        <div class="card" style="width: 15rem;">
+            <img src="{{order.item.image.url}}" class="card-img-top w-100 h-25" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{order.item.brand}}</h5>
+                <h5 class="card-title">{{order.item.mob_name}}</h5>
+                <h5 class="card-title">{{order.status}}</h5>
+                <h5 class="card-title">{{order.date_order}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+{%endfor%}
+
+{%endblock%}

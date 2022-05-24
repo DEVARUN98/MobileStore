@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+{%block body_block%}
+
+<h1>Hello User</h1>
+<a href="{%url 'useradd'%}">Sign Up</a>
+<h4>Already a user <a href="{%url 'signin'%}">Login</a></h4>
+
+{%endblock%}

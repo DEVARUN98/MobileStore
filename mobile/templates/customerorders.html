@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{%extends 'm_base.html'%}
+
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        New Orders #{{neworder_count}}
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                     data-bs-parent="#accordionFlushExample">
+                    <table class="table">
+                        <tr>
+                            <th>Item</th>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Status</th>
+                        </tr>
+                        {%for order in neworders%}
+                        <tr>
+                            <td>{{order.item.book_name}}</td>
+                            <td>{{order.date_order}}</td>
+                            <td>{{order.user}}</td>
+                            <td>{{order.status}}</td>
+                            <!--                    <td><img src="{{order.image.url}}" alt="" width="100px" height="100px"></td>-->
+                        </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Delivered Orders #{{d_order_count}}
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                     data-bs-parent="#accordionFlushExample">
+                    <table class="table">
+                        <tr>
+                            <th>Brand</th>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Status</th>
+                        </tr>
+
+                        {%for order in d_orders%}
+                        <tr>
+                            <td>{{order.item.brand}}</td>
+                            <td>{{order.date_order}}</td>
+                            <td>{{order.user}}</td>
+                            <td>{{order.status}}</td>
+                        </tr>
+                        >
+                        {%endfor%}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+
+    </div>
+    <div class="col-1"></div>
+</div>
+
+{%endblock%}
